@@ -55,7 +55,7 @@ FERIADOS = [
 ]
 
 # datas do mês (hoje)
-hoje_date = date.today()
+hoje_date = date.today() - timedelta(days=1)
 first_day = date(hoje_date.year, hoje_date.month, 1)
 last_day = date(hoje_date.year, hoje_date.month, calendar.monthrange(hoje_date.year, hoje_date.month)[1])
 
@@ -113,7 +113,8 @@ def calcular_comissao(contas, meta, inclui_bonus=False, pos=None):
     ating = contas / meta_safe
     unit = faixa_unitario(ating)
     acel = multiplicador_acelerador(ating)
-    comissao = contas * unit * acel
+    contas_real = int(contas)  # força inteiro
+    comissao = contas_real * unit * acel
     bonus = BONUS_POS.get(pos, 0) if inclui_bonus and pos in BONUS_POS else 0
     return {
         "comissao_total": comissao + bonus,
