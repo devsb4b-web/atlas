@@ -50,8 +50,12 @@ sim_pos = st.sidebar.selectbox("Simular posição (opcional)", options=["Nenhuma
 # ---------- Cálculo de dias úteis e projeções ----------
 # configura feriados opcionais (adicione date(YYYY, M, D) conforme necessário)
 FERIADOS = [
-    date(2025, 11, 20)
-    # Exemplo: date(2025, 1, 1), date(2025, 4, 21)
+    date(2025, 11, 20),
+    date(2025, 12, 25), # Natal
+    date(2025, 12, 26), # Recesso
+    date(2025, 12, 29), # Recesso
+    date(2025, 12, 30), # Recesso
+    date(2025, 12, 31), # Recesso
 ]
 
 # datas do mês (hoje)
