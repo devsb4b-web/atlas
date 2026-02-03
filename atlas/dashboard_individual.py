@@ -25,7 +25,7 @@ nome = st.sidebar.text_input("Seu nome", value="")
 equipe = st.sidebar.selectbox("Equipe", options=["URA", "DISCADOR", "Outro"], index=0)
 meta_atual = st.sidebar.number_input(
     "Meta atual (contas/mês)", min_value=0,
-    value=80 if equipe == "URA" else 60, step=1
+    value=90 if equipe == "URA" else 70, step=1
 )
 aprovadas_ate_agora = st.sidebar.number_input(
     "Contas aprovadas até agora", min_value=0, value=0, step=1
@@ -50,12 +50,19 @@ sim_pos = st.sidebar.selectbox("Simular posição (opcional)", options=["Nenhuma
 # ---------- Cálculo de dias úteis e projeções ----------
 # configura feriados opcionais (adicione date(YYYY, M, D) conforme necessário)
 FERIADOS = [
-    date(2025, 11, 20),
-    date(2025, 12, 25), # Natal
-    date(2025, 12, 26), # Recesso
-    date(2025, 12, 29), # Recesso
-    date(2025, 12, 30), # Recesso
-    date(2025, 12, 31), # Recesso
+    date(2026, 1, 1),   # Confraternização Universal
+    date(2026, 1, 2),   # Recesso
+    date(2026, 1, 25),  # Aniversário de SP
+    date(2026, 2, 17),  # Carnaval
+    date(2026, 4, 21),  # Tiradentes
+    date(2026, 5, 1),   # Dia do Trabalho
+    date(2026, 7, 9),   # Revolução Constitucionalista
+    date(2026, 9, 7),   # Independência
+    date(2026, 10, 12), # Nossa Senhora Aparecida
+    date(2026, 11, 2),  # Finados
+    date(2026, 11, 15), # Proclamação da República
+    date(2026, 11, 20), # Consciência Negra
+    date(2026, 12, 25), # Natal
 ]
 
 # datas do mês (hoje)
