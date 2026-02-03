@@ -54,6 +54,7 @@ FERIADOS = [
     date(2026, 1, 2),   # Recesso
     date(2026, 1, 25),  # Aniversário de SP
     date(2026, 2, 17),  # Carnaval
+    date(2026, 2, 18),  # Fix
     date(2026, 4, 21),  # Tiradentes
     date(2026, 5, 1),   # Dia do Trabalho
     date(2026, 7, 9),   # Revolução Constitucionalista
